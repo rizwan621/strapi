@@ -35,6 +35,14 @@ const command = () => {
       .addOption(
         new Option('--to-token <token>', `Transfer token for the remote Strapi destination`)
       )
+      .addOption(
+        new Option(
+          '--log-level <logLevel>',
+          `Choose the log level while running the transfer command`
+        )
+          .choices(['info', 'warning', 'error'])
+          .default('info')
+      )
       .addOption(forceOption)
       .addOption(excludeOption)
       .addOption(onlyOption)

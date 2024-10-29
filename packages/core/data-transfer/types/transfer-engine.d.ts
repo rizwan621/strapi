@@ -1,10 +1,12 @@
 import type { PassThrough } from 'stream';
 import type { ITransferResults, TransferTransforms, TransferProgress } from './utils';
 import type { ISourceProvider, IDestinationProvider } from './providers';
-import type { IDiagnosticReporter } from '../engine/diagnostic';
+import type { IDiagnosticReporter, DiagnosticKind } from '../engine/diagnostic';
 import type { Diff } from '../utils/json';
 
 export type TransferFilterPreset = 'content' | 'files' | 'config';
+
+export type LogLevel = DiagnosticKind;
 
 // Error resolving handler middleware for the transfer engine
 export type NextMiddleware<T> = (context: T) => void | Promise<void>;
@@ -175,4 +177,7 @@ export interface ITransferEngineOptions {
 
   // delay after each record
   throttle?: number;
+
+  // log level
+  logLevel?: LogLevel;
 }

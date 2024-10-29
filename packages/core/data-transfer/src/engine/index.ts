@@ -15,6 +15,7 @@ import type {
   ILink,
   IMetadata,
   ISourceProvider,
+  LogLevel,
   ITransferEngine,
   ITransferEngineOptions,
   TransferProgress,
@@ -42,6 +43,7 @@ import {
   IDiagnosticReporter,
   ErrorDiagnosticSeverity,
 } from './diagnostic';
+
 import { DataTransferError } from '../errors';
 import * as utils from '../utils';
 import { ProviderTransferError } from '../errors/providers';
@@ -944,6 +946,7 @@ export type {
   ErrorHandlerContext,
   SchemaDiffHandlerContext,
   ITransferResults,
+  LogLevel,
 };
 
 export * as errors from './errors';

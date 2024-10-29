@@ -36,7 +36,9 @@ interface CmdOptions {
   exclude?: (keyof engineDataTransfer.TransferGroupFilter)[];
   throttle?: number;
   force?: boolean;
+  logLevel?: engineDataTransfer.LogLevel;
 }
+
 /**
  * Transfer command.
  *
@@ -113,6 +115,7 @@ export default async (opts: CmdOptions) => {
     exclude: opts.exclude,
     only: opts.only,
     throttle: opts.throttle,
+    logLevel: opts.logLevel,
     transforms: {
       links: [
         {
