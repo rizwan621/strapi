@@ -51,7 +51,7 @@ const options = {
   exclude: [], // exclude these classifications of data; see CLI documentation of `--exclude` for list
   only: [], // transfer only these classifications of data; see CLI documentation of `--only` for list
   throttle: 0, // add a delay of this many millseconds between each item transferred
-
+  logLevel: 'info' // choose the log level between 'info', 'warning', 'error'
   // the keys of `transforms` are the stage names for which they are run
   transforms: {
     links: [
